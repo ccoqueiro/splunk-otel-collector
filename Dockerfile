@@ -7,9 +7,9 @@ COPY cmd/translatesfx /
 COPY cmd/migratecheckpoint /
 # Note that this shouldn't be necessary, but in some cases the file seems to be
 # copied with the execute bit lost (see https://github.com/open-telemetry/opentelemetry-collector/issues/1317)
-RUN chmod 755 /cmd/otelcol
-RUN chmod 755 /cmd/translatesfx
-RUN chmod 755 /cmd/migratecheckpoint
+RUN chmod 755 /otelcol
+RUN chmod 755 /translatesfx
+RUN chmod 755 /migratecheckpoint
 RUN echo "splunk-otel-collector:x:999:999::/:" > /etc_passwd
 # create base dirs since we cannot chown in scratch image except via COPY
 RUN mkdir -p /otel/collector /splunk-otel-collector
