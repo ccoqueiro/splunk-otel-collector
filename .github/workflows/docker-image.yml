@@ -23,4 +23,4 @@ jobs:
     - name: Build the Docker Image
       run: docker build . --file Dockerfile --tag quay.io/signalfx/splunk-otel-collector:latest
     - name: Docker Push
-      run: docker push ${{screts.DOCKER_USER}}/ccoqueiro/otelcoletorgw
+      run: docker push ${{secrets.DOCKER_USER}}/ccoqueiro/otelcoletorgw
